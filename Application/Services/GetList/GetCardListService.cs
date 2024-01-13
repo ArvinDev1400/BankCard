@@ -2,16 +2,11 @@
 
 namespace Application.Services.GetList;
 
-public interface IGetCardList
-{
-    List<CardListDto> Execute();
-}
-
-public class GetCardList : IGetCardList
+public class GetCardListService : IGetCardListService
 {
     private readonly IApplicationDbContext _dbContext;
 
-    public GetCardList(IApplicationDbContext dbContext)
+    public GetCardListService(IApplicationDbContext dbContext)
     {
         _dbContext = dbContext;
     }
@@ -25,19 +20,12 @@ public class GetCardList : IGetCardList
                 Id = c.Id ,
                 FirstName = c.FirstName ,
                 LastName = c.LastName ,
-                CardNumber = c.CardNumber
+                CardNumber = c.CardNumber ,
+                CVV2 = c.CVV2
+
             }).ToList();
 
         return cardList;
 
     }
-}
-
-public class CardListDto
-{
-    public int Id { get; set; }
-    public string? FirstName { get; set; }
-    public string? LastName { get; set; }
-    public string CardNumber { get; set; }
-
 }

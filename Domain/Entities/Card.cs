@@ -37,4 +37,16 @@ public class Card
         CVV2 = cvv2;
         BankName = bankName;
     }
+
+    public void Update(string? firstName , string? lastName , string cardNumber , string? accountNumber , DateTime expirationDate , string? shaba , string? cvv2 , BankName bankName)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        CardNumber = cardNumber;
+        AccountNumber = accountNumber;
+        ExpirationDate = expirationDate;
+        Shaba = shaba;
+        CVV2 = cvv2;
+        BankName = bankName;
+    }
 }

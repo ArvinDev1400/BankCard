@@ -12,5 +12,4 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     }
 
     public DbSet<Card> Cards { get; set; }
-
 }
